@@ -5,3 +5,8 @@ build --bes_backend=grpcs://remote.buildbuddy.io
 build --remote_cache=grpcs://remote.buildbuddy.io
 build --remote_timeout=3600
 build --remote_executor=grpcs://remote.buildbuddy.io
+
+build --extra_execution_platforms=@buildbuddy_toolchain//:platform
+build --host_platform=@buildbuddy_toolchain//:platform
+build --platforms=@buildbuddy_toolchain//:platform
+build --crosstool_top=@buildbuddy_toolchain//:toolchain
