@@ -1,4 +1,4 @@
-try-import ~/.buildbuddy.bazelrc
+try-import /etc/.buildbuddy.bazelrc
 
 build --bes_results_url=https://app.buildbuddy.io/invocation/
 build --bes_backend=grpcs://remote.buildbuddy.io
@@ -10,3 +10,7 @@ build --extra_execution_platforms=@buildbuddy_toolchain//:platform
 build --host_platform=@buildbuddy_toolchain//:platform
 build --platforms=@buildbuddy_toolchain//:platform
 build --crosstool_top=@buildbuddy_toolchain//:toolchain
+
+build --build_metadata=REPO_URL=https://github.com/AlexTereshenkov/java-bazel-build-example.git
+build --build_metadata=BRANCH_NAME=main
+build --build_metadata=ROLE=CI
