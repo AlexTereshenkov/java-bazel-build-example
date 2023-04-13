@@ -45,10 +45,12 @@ $ bazel test --cache_test_results=no //...
 
 ## Coverage
 
-Record test coverage
+Record test coverage. Disable remote execution if the toolchain used doesn't provide the tools e.g. GCov.
 
 ```
-
+$ apt install lcov
+$ bazel coverage --nocache_test_results --strategy=CoverageReport=local //...
+$ genhtml --output genhtml <path-to-the-coverage.data-file>
 ```
 
 ## Use different Java version
