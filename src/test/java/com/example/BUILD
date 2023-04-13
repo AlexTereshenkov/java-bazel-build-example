@@ -3,5 +3,5 @@ java_test(
     name = "GreetingTest",
     size = "small",
     srcs = ["GreetingTest.java"],
-    deps = ["//src/main/java/com/example:greeter"]
+    deps = ["//src/main/java/com/example:greeter"],
 )

@@ -12,7 +12,5 @@ java_binary(
 java_library(
     name = "greeter",
     srcs = ["Greeting.java"],
-    deps = ["@maven//:org_apache_commons_commons_lang3_3_12_0"]
+    deps = ["@maven//:org_apache_commons_commons_lang3_3_12_0"],
 )
-
-
