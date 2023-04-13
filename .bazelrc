@@ -6,6 +6,9 @@ build --remote_cache=grpcs://remote.buildbuddy.io
 build --remote_timeout=3600
 build --remote_executor=grpcs://remote.buildbuddy.io
 
+build --java_language_version=17
+build --java_runtime_version=remotejdk_17
+
 build --extra_execution_platforms=@buildbuddy_toolchain//:platform
 build --host_platform=@buildbuddy_toolchain//:platform
 build --platforms=@buildbuddy_toolchain//:platform

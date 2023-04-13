@@ -1,6 +1,7 @@
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 RULES_JVM_EXTERNAL_TAG = "4.3"
+
 RULES_JVM_EXTERNAL_SHA = "6274687f6fc5783b589f56a2f1ed60de3ce1f99bc4e8f9edef3de43bdf7c6e74"
 
 http_archive(
@@ -14,7 +15,7 @@ load("@rules_jvm_external//:defs.bzl", "maven_install")
 
 maven_install(
     # in format group:artifact:version
-    artifacts = [        
+    artifacts = [
         "org.apache.commons:commons-lang3:3.12.0",
     ],
     repositories = [
@@ -30,7 +31,12 @@ http_archive(
 )
 
 load("@io_buildbuddy_buildbuddy_toolchain//:deps.bzl", "buildbuddy_deps")
+
 buildbuddy_deps()
 
-load("@io_buildbuddy_buildbuddy_toolchain//:rules.bzl", "buildbuddy", "UBUNTU20_04_IMAGE")
-buildbuddy(name = "buildbuddy_toolchain", container_image = UBUNTU20_04_IMAGE)
+load("@io_buildbuddy_buildbuddy_toolchain//:rules.bzl", "UBUNTU20_04_IMAGE", "buildbuddy")
+
+buildbuddy(
+    name = "buildbuddy_toolchain",
+    container_image = UBUNTU20_04_IMAGE,
+)

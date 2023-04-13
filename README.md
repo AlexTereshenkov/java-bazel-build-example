@@ -37,6 +37,29 @@ Run all tests
 $ bazel test //...
 ```
 
+Run tests without using the cache:
+
+```
+$ bazel test --cache_test_results=no //...
+```
+
+## Coverage
+
+Record test coverage
+
+```
+
+```
+
+## Use different Java version
+
+https://bazel.build/docs/user-manual#java_runtime_version
+
+```
+build --java_language_version=17
+build --java_runtime_version=remotejdk_17
+```
+
 ## Readings
 
 * https://bazel.build/migrate/maven
